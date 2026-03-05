@@ -21,7 +21,7 @@
   justify-content: space-between;
   align-items: center;
   gap: 20px;
-  padding: 40px 40px;
+  padding-top: 40px;
 }
 
 .first-section svg {
@@ -64,23 +64,22 @@
   max-width: 700px;
   height: 1px;
   background: #e5e5e5;
+  margin: 40px 40px;
 }
 
-/* Second Section */
-.second-section{
+/* Common */
+.section{
   max-width: 800px;
-  margin: 80px auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 160px 1fr;
   gap: 40px;
+  align-items: start;
 }
 
 .title{
-  font-size: 26px;
+  font-size: 30px;
   font-weight: 50;
-  color: black;
 }
 
 .description{
@@ -88,4 +87,37 @@
   line-height: 1.7;
   color: #323131;
   text-align: justify;
+}
+
+/* Second Section */
+
+/* SKILLS */
+
+.skills-container{
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* SKILL CATEGORY */
+
+.skill-category{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-title{
+  font-weight: 600;
+  margin-right: 6px;
+}
+
+/* SKILL BADGES */
+
+.skill-item{
+  padding: 4px 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #333;
 }

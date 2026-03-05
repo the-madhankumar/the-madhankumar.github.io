@@ -1,10 +1,9 @@
 import { SquareUser, Linkedin } from 'lucide-react';
-import about from '../Data/About';
-import './index.css'
+import { Divider, SkillsResolve } from '../utils/utils'
 
-const Divider = () => {
-    return <div className="divider"></div>
-}
+import about from '../Data/About';
+import skills from '../Data/Skills';
+import './index.css'
 
 const Home = () => {
     return (
@@ -29,11 +28,27 @@ const Home = () => {
 
             <Divider />
 
-            <div className='second-section'>
+            <div className='section'>
                 <div className='title'>{about.title}</div>
                 <div className='description'>{about.description}</div>
             </div>
-        </div> 
+
+            <Divider />
+
+            <div className='section'>
+                <div className='title'>{skills.title}</div>
+
+                <div className='skills-container'>
+                    {skills.categories?.map((category, index) => (
+                        <SkillsResolve
+                            key={index}
+                            name={category.name}
+                            skills={category.skills}
+                        />
+                    ))}
+                </div>
+            </div>
+        </div>
     )
 }
 
