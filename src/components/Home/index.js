@@ -25,6 +25,10 @@ const Home = () => {
                     </span>
                 </div>
             </div>
+
+            <Divider />
+
+            
         </div> 
     )
 }
