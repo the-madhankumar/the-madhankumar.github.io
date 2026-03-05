@@ -79,7 +79,9 @@
 
 .title{
   font-size: 30px;
-  font-weight: 50;
+  font-weight: 100;
+  letter-spacing: 2px;
+  color: #444;
 }
 
 .description{
@@ -91,15 +93,11 @@
 
 /* Second Section */
 
-/* SKILLS */
-
 .skills-container{
   display: flex;
   flex-direction: column;
   gap: 18px;
 }
-
-/* SKILL CATEGORY */
 
 .skill-category{
   display: flex;
@@ -112,12 +110,59 @@
   margin-right: 6px;
 }
 
-/* SKILL BADGES */
-
 .skill-item{
   padding: 4px 10px;
   border: 1px solid #ddd;
   border-radius: 5px;
   font-size: 14px;
+  color: #333;
+}
+
+/* Projects */
+
+.project-card{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 20px;
+}
+
+.project-card:last-child{
+  border-bottom: none;
+}
+
+.project-card h2{
+  font-size: 18px;
+  font-weight: 600;
+  color: #111;
+}
+
+.project-card p{
+  font-size: 14px;
+  color: #666;
+}
+
+.project-card div{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.project-card span{
+  padding: 3px 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #444;
+}
+
+.project-card ul{
+  margin-top: 5px;
+  padding-left: 18px;
+}
+
+.project-card li{
+  font-size: 14px;
+  line-height: 1.6;
   color: #333;
 }

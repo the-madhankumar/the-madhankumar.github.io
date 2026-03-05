@@ -1,8 +1,9 @@
 import { SquareUser, Linkedin } from 'lucide-react';
-import { Divider, SkillsResolve } from '../utils/utils'
+import { Divider, SkillsResolve, ProjectsResolve } from '../utils/utils'
 
 import about from '../Data/About';
 import skills from '../Data/Skills';
+import projects from '../Data/Projects';
 import './index.css'
 
 const Home = () => {
@@ -46,6 +47,16 @@ const Home = () => {
                             skills={category.skills}
                         />
                     ))}
+                </div>
+            </div>
+
+            <Divider />
+
+            <div className='section'>
+                <div className='title'>{projects.title}</div>
+
+                <div className='skills-container'>
+                    <ProjectsResolve projects={projects.projects} />
                 </div>
             </div>
         </div>

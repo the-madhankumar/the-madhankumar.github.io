@@ -19,3 +19,28 @@ export const SkillsResolve = (props) => {
     </div>
   )
 }
+
+export const ProjectsResolve = ({ projects }) => {
+  return (
+    <div>
+      {projects?.map((project, index) => (
+        <div key={index} className="project-card">
+          <h2>{project.title}</h2>
+          <p>{project.subtitle}</p>
+
+          <div>
+            {project.techStack?.map((tech, i) => (
+              <span key={i}>{tech} </span>
+            ))}
+          </div>
+
+          <ul>
+            {project.description?.map((point, i) => (
+              <li key={i}>{point}</li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  );
+};
