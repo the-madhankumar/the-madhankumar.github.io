@@ -44,3 +44,25 @@ export const ProjectsResolve = ({ projects }) => {
     </div>
   );
 };
+
+export const WorkResolve = ({ work }) => {
+  return (
+    <div>
+      {work?.map((item, index) => (
+        <div key={index} className="project-card">
+          <h2>{item.company}</h2>
+          <p className='work-sub-section'>
+            <strong>{item.role}</strong> {item.duration}
+          </p>
+          <p>{item.location}</p>
+
+          <ul>
+            {item.description?.map((point, i) => (
+              <li key={i}>{point}</li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  );
+};
