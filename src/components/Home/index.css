@@ -293,5 +293,196 @@
 }
 
 .flip-icon {
-  transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+@media (max-width: 1024px) {
+
+    .section {
+        grid-template-columns: 140px 1fr;
+        gap: 30px;
+        padding: 0 20px;
+    }
+
+    .divider {
+        max-width: 90%;
+    }
+
+    .first-section {
+        gap: 16px;
+        padding-top: 35px;
+    }
+
+    .first-section svg {
+        width: 60px;
+        height: 60px;
+    }
+
+    .my-name {
+        font-size: 28px;
+    }
+
+    .my-links {
+        gap: 20px;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .first-section {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .my-name {
+        font-size: 26px;
+        letter-spacing: 1px;
+    }
+
+    .first-section svg {
+        width: 55px;
+        height: 55px;
+    }
+
+    .my-links {
+        justify-content: center;
+    }
+
+    .section {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 0 25px;
+    }
+
+    .title {
+        font-size: 24px;
+    }
+
+    .description {
+        font-size: 15px;
+    }
+
+    .divider {
+        margin: 30px 0;
+        max-width: 90%;
+    }
+
+    /* Education section */
+    .education-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .first-section {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        gap: 14px;
+    }
+
+    .first-section svg {
+        width: 55px;
+        height: 55px;
+    }
+
+    .my-name {
+        font-size: 26px;
+        letter-spacing: 1.5px;
+    }
+
+    .my-links {
+        justify-content: center;
+        margin-top: 5px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .Main-container {
+        padding: 0 15px;
+    }
+
+    .my-name {
+        font-size: 22px;
+    }
+
+    .title {
+        font-size: 20px;
+    }
+
+    .description {
+        font-size: 14px;
+    }
+
+    .skill-item {
+        font-size: 12px;
+    }
+
+    .project-card h2 {
+        font-size: 16px;
+    }
+
+    .project-card p {
+        font-size: 13px;
+    }
+
+    .project-card li {
+        font-size: 13px;
+    }
+
+    /* Work section */
+    .work-sub-section {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    /* Footer responsive */
+    .footer-content {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .footer-icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .first-section {
+        gap: 12px;
+        padding-top: 30px;
+    }
+
+    .first-section svg {
+        width: 48px;
+        height: 48px;
+    }
+
+    .my-name {
+        font-size: 22px;
+        letter-spacing: 1px;
+    }
+
+    .my-links {
+        gap: 18px;
+    }
+
+    .my-links a {
+        font-size: 14px;
+    }
+
+    .my-links svg {
+        width: 20px;
+        height: 20px;
+    }
+
 }
