@@ -66,3 +66,16 @@ export const WorkResolve = ({ work }) => {
     </div>
   );
 };
+
+export const CertificatesResolve = ({ certificates }) => {
+  return (
+    <div className="certificates-container">
+      {certificates?.map((cert, index) => (
+        <div key={index} className="certificate-item">
+          <span className="certificate-name">{cert.name}</span>
+          <span className="certificate-org"> — {cert.organization}</span>
+        </div>
+      ))}
+    </div>
+  )
+}

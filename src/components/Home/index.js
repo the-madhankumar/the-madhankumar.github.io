@@ -1,10 +1,11 @@
-import { SquareUser, Linkedin } from 'lucide-react';
-import { Divider, SkillsResolve, ProjectsResolve, WorkResolve } from '../utils/utils'
+import { SquareUser, Linkedin, Github } from 'lucide-react';
+import { Divider, SkillsResolve, ProjectsResolve, WorkResolve, CertificatesResolve } from '../utils/utils'
 
 import about from '../Data/About';
 import skills from '../Data/Skills';
 import projects from '../Data/Projects';
 import internships from '../Data/Work';
+import certificates from '../Data/Certificates';
 
 import './index.css'
 
@@ -19,7 +20,9 @@ const Home = () => {
                         <a href=''>madhankumarbusiness@gmail.com</a>
                     </span>
                     <span>
-                        <a href=''>git</a>
+                        <a href=''>
+                            <Github/>
+                        </a>
                     </span>
                     <span>
                         <a href=''>
@@ -70,6 +73,14 @@ const Home = () => {
                 <div className='skills-container'>
                     <WorkResolve work={internships.experiences} />
                 </div>
+            </div>
+
+            <Divider />
+
+            <div className='section'>
+                <div className='title'>{certificates.title}</div>
+
+                <CertificatesResolve certificates={certificates.items} />
             </div>
         </div>
     )

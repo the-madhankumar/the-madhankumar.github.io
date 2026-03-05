@@ -173,3 +173,23 @@
     flex-direction: row;
     justify-content: space-between;
 }
+
+/* Certificates */
+.certificates-container{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.certificate-item{
+  font-size: 15px;
+  color: #333;
+}
+
+.certificate-name{
+  font-weight: 500;
+}
+
+.certificate-org{
+  color: #666;
+}
