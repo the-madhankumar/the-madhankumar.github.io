@@ -1,4 +1,4 @@
-import { SquareUser, Linkedin, Github } from 'lucide-react';
+import { SquareUser, Linkedin, Github, Mail, AudioWaveform, SendHorizontal } from 'lucide-react';
 import { Divider, SkillsResolve, ProjectsResolve, WorkResolve, CertificatesResolve, EducationResolve } from '../utils/utils'
 
 import about from '../Data/About';
@@ -96,6 +96,49 @@ const Home = () => {
             </div>
 
             <Divider />
+
+            <footer className="footer">
+                <div className="footer-content">
+
+                    <SendHorizontal className="footer-icon" />
+
+                    <div className="footer-links">
+                        <a href="mailto:madhankumarbusiness@gmail.com">
+                            <Mail size={16} /> madhankumarbusiness@gmail.com
+                        </a>
+
+                        <span className="footer-separator">|</span>
+
+                        <a
+                            href="https://github.com/yourgithub"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            <Github size={16} /> GitHub
+                        </a>
+
+                        <span className="footer-separator">|</span>
+
+                        <a
+                            href="https://linkedin.com/in/yourlinkedin"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            <Linkedin size={16} /> LinkedIn
+                        </a>
+
+                        <span className="footer-separator">|</span>
+
+                        <span className="footer-copy">
+                           © {new Date().getFullYear()} Madhan Kumar M
+                        </span>
+
+                    </div>
+
+                    <SendHorizontal className="footer-icon flip-icon" />
+
+                </div>
+            </footer>
         </div>
     )
 }
