@@ -1,11 +1,12 @@
 import { SquareUser, Linkedin, Github } from 'lucide-react';
-import { Divider, SkillsResolve, ProjectsResolve, WorkResolve, CertificatesResolve } from '../utils/utils'
+import { Divider, SkillsResolve, ProjectsResolve, WorkResolve, CertificatesResolve, EducationResolve } from '../utils/utils'
 
 import about from '../Data/About';
 import skills from '../Data/Skills';
 import projects from '../Data/Projects';
 import internships from '../Data/Work';
 import certificates from '../Data/Certificates';
+import education from '../Data/Education';
 
 import './index.css'
 
@@ -21,7 +22,7 @@ const Home = () => {
                     </span>
                     <span>
                         <a href=''>
-                            <Github/>
+                            <Github />
                         </a>
                     </span>
                     <span>
@@ -82,6 +83,19 @@ const Home = () => {
 
                 <CertificatesResolve certificates={certificates.items} />
             </div>
+
+            <Divider />
+
+            <div className='section'>
+                <div className='title'>{education.title}</div>
+
+                <EducationResolve
+                    education={education.items}
+                    img={education.image}
+                />
+            </div>
+
+            <Divider />
         </div>
     )
 }
