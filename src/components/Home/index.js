@@ -1,4 +1,5 @@
 import { SquareUser, Linkedin } from 'lucide-react';
+import about from '../Data/About';
 import './index.css'
 
 const Divider = () => {
@@ -28,7 +29,10 @@ const Home = () => {
 
             <Divider />
 
-            
+            <div className='second-section'>
+                <div className='title'>{about.title}</div>
+                <div className='description'>{about.description}</div>
+            </div>
         </div> 
     )
 }
