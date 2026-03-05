@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* First Section */
+.Main-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #ffffff;
+  font-family: "Inter", system-ui, sans-serif;
+  color: #111;
+}
+
+.first-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 40px 40px;
+}
+
+.first-section svg {
+  width: 70px;
+  height: 70px;
+  color: #111;
+}
+
+.my-name {
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.my-links {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.my-links a {
+  text-decoration: none;
+  font-size: 16px;
+  color: #555;
+  transition: all 0.2s ease;
+}
+
+.my-links a:hover {
+  color: #000;
+}
+
+.my-links svg {
+  width: 22px;
+  height: 22px;
+}
+
+.divider {
+  width: 100%;
+  max-width: 700px;
+  height: 1px;
+  background: #e5e5e5;
+}
+
+/* Second Section */
+.second-section{
+  max-width: 800px;
+  margin: 80px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.title{
+  font-size: 26px;
+  font-weight: 50;
+  color: black;
+}
+
+.description{
+  font-size: 16px;
+  line-height: 1.7;
+  color: #323131;
+  text-align: justify;
+}
