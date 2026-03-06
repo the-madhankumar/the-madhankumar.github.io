@@ -1,4 +1,4 @@
-import { SquareUser, Linkedin, Github, Mail, SendHorizontal, Moon, Sun } from 'lucide-react';
+import { SquareUser, Linkedin, Github, Mail, SendHorizontal, Moon, Sun, FileText } from 'lucide-react';
 import React, { useState } from 'react';
 import { Divider, SkillsResolve, ProjectsResolve, WorkResolve, CertificatesResolve, EducationResolve } from '../utils/utils'
 
@@ -51,7 +51,18 @@ const Home = () => {
 
             <div className='section'>
                 <div className='title'>{about.title}</div>
-                <div className='description'>{about.description}</div>
+                <div className='des'>
+                    <div className='description'>{about.description}</div>
+
+                    <a
+                        href={about.resume}
+                        download="Madhan-Kumar-M.pdf"
+                        className='download-button'
+                    >
+                        <FileText className='download' />
+                        Download CV
+                    </a>
+                </div>
             </div>
 
             <Divider />

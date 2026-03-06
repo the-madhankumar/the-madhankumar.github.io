@@ -6,7 +6,8 @@ With hands-on experience building innovative projects and completing internships
 
 My work focuses on impactful areas such as healthcare, agritech, and gaming, where technology can create meaningful change.
 
-I'm always open to learning, building, and collaborating on projects that solve real problems. Let's connect and explore opportunities together.`
+I'm always open to learning, building, and collaborating on projects that solve real problems. Let's connect and explore opportunities together.`,
+  resume: './MADHAN_KUMAR_M.pdf'
 }
 
 export default about
