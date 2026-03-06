@@ -1,23 +1,61 @@
+/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* First Section */
+/* Root variables for dark/light mode */
+.Main-container.light {
+    --bg: #ffffff;
+    --text: #111;
+    --text-secondary: #555;
+    --link: #1a73e8;
+    --divider: #e5e5e5;
+    --border: #ddd;
+    --card-bg: #fff;
+}
+
+.Main-container.dark {
+    --bg: #121212;
+    --text: #f1f1f1;
+    --text-secondary: #ccc;
+    --link: #bb86fc;
+    --divider: #444;
+    --border: #555;
+    --card-bg: #1e1e1e;
+}
+
 .Main-container {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: #ffffff;
+    background-color: var(--bg);
     font-family: "Inter", system-ui, sans-serif;
-    color: #111;
+    color: var(--text);
+    transition: all 0.3s ease;
 }
 
+/* Links and icons */
+.my-links span svg {
+    cursor: pointer;
+}
+
+.my-links a {
+    text-decoration: none;
+    font-size: 16px;
+    color: var(--text-secondary);
+    transition: color 0.2s ease;
+}
+
+.my-links a:hover {
+    color: var(--text);
+}
+
+/* First section */
 .first-section {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     gap: 20px;
@@ -27,7 +65,7 @@
 .first-section svg {
     width: 70px;
     height: 70px;
-    color: #111;
+    color: var(--text);
 }
 
 .my-name {
@@ -43,31 +81,21 @@
     margin-top: 10px;
 }
 
-.my-links a {
-    text-decoration: none;
-    font-size: 16px;
-    color: #555;
-    transition: all 0.2s ease;
-}
-
-.my-links a:hover {
-    color: #000;
-}
-
 .my-links svg {
     width: 22px;
     height: 22px;
 }
 
+/* Divider */
 .divider {
     width: 100%;
     max-width: 700px;
     height: 1px;
-    background: #e5e5e5;
+    background-color: var(--divider);
     margin: 40px 40px;
 }
 
-/* Common */
+/* Section layout */
 .section {
     max-width: 800px;
     width: 100%;
@@ -81,18 +109,17 @@
     font-size: 30px;
     font-weight: 100;
     letter-spacing: 2px;
-    color: #444;
+    color: var(--text-secondary);
 }
 
 .description {
     font-size: 16px;
     line-height: 1.7;
-    color: #323131;
+    color: var(--text-secondary);
     text-align: justify;
 }
 
-/* Second Section */
-
+/* Skills */
 .skills-container {
     display: flex;
     flex-direction: column;
@@ -112,48 +139,41 @@
 
 .skill-item {
     padding: 4px 10px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border);
     border-radius: 5px;
     font-size: 14px;
-    color: #333;
+    color: var(--text);
+    background-color: var(--card-bg);
 }
 
 /* Projects */
-
 .project-card {
     display: flex;
     flex-direction: column;
     gap: 10px;
     padding-bottom: 20px;
-}
-
-.project-card:last-child {
-    border-bottom: none;
+    background-color: var(--card-bg);
+    border-radius: 6px;
+    padding: 15px;
 }
 
 .project-card h2 {
     font-size: 18px;
     font-weight: 600;
-    color: #111;
+    color: var(--text);
 }
 
 .project-card p {
     font-size: 14px;
-    color: #666;
-}
-
-.project-card div {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
+    color: var(--text-secondary);
 }
 
 .project-card span {
     padding: 3px 8px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border);
     border-radius: 4px;
     font-size: 12px;
-    color: #444;
+    color: var(--text-secondary);
 }
 
 .project-card ul {
@@ -164,10 +184,10 @@
 .project-card li {
     font-size: 14px;
     line-height: 1.6;
-    color: #333;
+    color: var(--text);
 }
 
-/* Work Experience */
+/* Work */
 .work-sub-section {
     display: flex;
     flex-direction: row;
@@ -183,15 +203,11 @@
 
 .certificate-item {
     font-size: 15px;
-    color: #333;
-}
-
-.certificate-name {
-    font-weight: 500;
+    color: var(--text);
 }
 
 .certificate-org {
-    color: #666;
+    color: var(--text-secondary);
 }
 
 /* Education */
@@ -222,17 +238,17 @@
 .edu-left span:first-child {
     font-size: 16px;
     font-weight: 600;
-    color: #111;
+    color: var(--text);
 }
 
 .edu-left span:last-child {
     font-size: 14px;
-    color: #555;
+    color: var(--text-secondary);
 }
 
 .edu-right {
     font-size: 15px;
-    color: #444;
+    color: var(--text-secondary);
 }
 
 /* Footer */
@@ -248,7 +264,7 @@
     align-items: center;
     gap: 18px;
     font-size: 14px;
-    color: #666;
+    color: var(--text-secondary);
 }
 
 .footer-links {
@@ -259,12 +275,15 @@
 
 .footer-links a {
     text-decoration: none;
-    color: #666;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 6px;
     transition: color 0.2s ease;
 }
 
 .footer-links a:hover {
-    color: #000;
+    color: var(--text);
 }
 
 .footer-separator {
@@ -274,30 +293,19 @@
 .footer-icon {
     width: 100px;
     height: 30px;
-    color: #bbb;
+    color: var(--text-secondary);
 }
 
 .footer-copy {
     margin-left: 6px;
 }
 
-.footer-links a {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.footer-code {
-    margin-left: 6px;
-    color: #bbb;
-}
-
 .flip-icon {
     transform: scaleX(-1);
 }
 
+/* Responsive */
 @media (max-width: 1024px) {
-
     .section {
         grid-template-columns: 140px 1fr;
         gap: 30px;
@@ -325,11 +333,9 @@
     .my-links {
         gap: 20px;
     }
-
 }
 
 @media (max-width: 768px) {
-
     .first-section {
         flex-direction: column;
         text-align: center;
@@ -369,38 +375,13 @@
         max-width: 90%;
     }
 
-    /* Education section */
     .education-container {
         flex-direction: column;
         align-items: flex-start;
     }
-
-    .first-section {
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-        gap: 14px;
-    }
-
-    .first-section svg {
-        width: 55px;
-        height: 55px;
-    }
-
-    .my-name {
-        font-size: 26px;
-        letter-spacing: 1.5px;
-    }
-
-    .my-links {
-        justify-content: center;
-        margin-top: 5px;
-    }
-
 }
 
 @media (max-width: 480px) {
-
     .Main-container {
         padding: 0 15px;
     }
@@ -433,13 +414,11 @@
         font-size: 13px;
     }
 
-    /* Work section */
     .work-sub-section {
         flex-direction: column;
         gap: 5px;
     }
 
-    /* Footer responsive */
     .footer-content {
         flex-direction: column;
         gap: 10px;
@@ -467,11 +446,6 @@
         height: 48px;
     }
 
-    .my-name {
-        font-size: 22px;
-        letter-spacing: 1px;
-    }
-
     .my-links {
         gap: 18px;
     }
@@ -484,5 +458,4 @@
         width: 20px;
         height: 20px;
     }
-
 }

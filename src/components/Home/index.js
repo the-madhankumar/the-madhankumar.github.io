@@ -1,4 +1,5 @@
-import { SquareUser, Linkedin, Github, Mail, AudioWaveform, SendHorizontal } from 'lucide-react';
+import { SquareUser, Linkedin, Github, Mail, SendHorizontal, Moon, Sun } from 'lucide-react';
+import React, { useState } from 'react';
 import { Divider, SkillsResolve, ProjectsResolve, WorkResolve, CertificatesResolve, EducationResolve } from '../utils/utils'
 
 import about from '../Data/About';
@@ -11,8 +12,12 @@ import education from '../Data/Education';
 import './index.css'
 
 const Home = () => {
+    const [darkMode, setdarkMode] = useState(false);
+
+    const toggle = () => setdarkMode(prev => !prev);
+
     return (
-        <div className='Main-container'>
+        <div className={`Main-container ${darkMode ? 'dark' : 'light'}`}>
             <div className='first-section'>
                 <SquareUser />
                 <span className='my-name'>MADHAN KUMAR M</span>
@@ -35,6 +40,9 @@ const Home = () => {
                         >
                             <Linkedin />
                         </a>
+                    </span>
+                    <span onClick={toggle}>
+                        {darkMode ? <Moon /> : <Sun />}
                     </span>
                 </div>
             </div>
