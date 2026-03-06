@@ -5,7 +5,7 @@ const internships = {
       company: "AGRI TECH CMSD",
       role: "App Developer",
       duration: "Nov 2023 – Jan 2024",
-      location: "Kundrathur, India",
+      location: "Kundrathur, Tamil Nadu, India",
       description: [
         "Spearheaded frontend and UI development using Flutter, ensuring responsive design across devices.",
         "Crafted visually engaging and user-centric interfaces to improve overall app usability.",
@@ -18,7 +18,7 @@ const internships = {
       company: "DiAtom Technologies",
       role: "App Developer",
       duration: "Feb 2024 – Apr 2024",
-      location: "Kundrathur, India",
+      location: "Kundrathur, Tamil Nadu, India",
       description: [
         "Enhanced a responsive cross-platform website using HTML, CSS, and JavaScript.",
         "Engineered a scalable mobile application using Flutter and Firebase.",
