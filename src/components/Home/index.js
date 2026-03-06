@@ -18,15 +18,15 @@ const Home = () => {
                 <span className='my-name'>MADHAN KUMAR M</span>
                 <div className='my-links'>
                     <span>
-                        <a href=''>madhankumarbusiness@gmail.com</a>
+                        <a href='mailto:madhankumarbusiness@gmail.com'>madhankumarbusiness@gmail.com</a>
                     </span>
                     <span>
-                        <a href=''>
+                        <a href='https://github.com/the-madhankumar'>
                             <Github />
                         </a>
                     </span>
                     <span>
-                        <a href=''>
+                        <a href='https://linkedin.com/in/themadhankumarm'>
                             <Linkedin />
                         </a>
                     </span>
@@ -110,7 +110,7 @@ const Home = () => {
                         <span className="footer-separator">|</span>
 
                         <a
-                            href="https://github.com/yourgithub"
+                            href="https://github.com/the-madhankumar"
                             target="_blank"
                             rel="noreferrer"
                         >
@@ -120,7 +120,7 @@ const Home = () => {
                         <span className="footer-separator">|</span>
 
                         <a
-                            href="https://linkedin.com/in/yourlinkedin"
+                            href="https://linkedin.com/in/themadhankumarm"
                             target="_blank"
                             rel="noreferrer"
                         >
@@ -130,7 +130,7 @@ const Home = () => {
                         <span className="footer-separator">|</span>
 
                         <span className="footer-copy">
-                           © {new Date().getFullYear()} Madhan Kumar M
+                            © {new Date().getFullYear()} Madhan Kumar M
                         </span>
 
                     </div>
