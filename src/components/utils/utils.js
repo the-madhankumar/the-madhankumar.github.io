@@ -1,3 +1,5 @@
+import { ExternalLink, Github } from 'lucide-react';
+
 export const Divider = () => {
     return <div className="divider"></div>
 }
@@ -25,7 +27,26 @@ export const ProjectsResolve = ({ projects }) => {
         <div>
             {projects?.map((project, index) => (
                 <div key={index} className="project-card">
-                    <h2>{project.title}</h2>
+                    <div className='project-external my-links'>
+                        <h2>{project.title}</h2>
+
+                        { project.link && 
+                            <a href={project.link}
+                                target="_blank"
+                                rel="noreferrer"
+                            ><ExternalLink />
+                            </a>
+                        }
+                        { project.github &&
+                            <a href={project.github}
+                                target="_blank"
+                                rel="noreferrer"
+                            ><Github />
+                            </a>
+                        }
+
+                    </div>
+
                     <p>{project.subtitle}</p>
 
                     <div>
@@ -79,6 +100,7 @@ export const CertificatesResolve = ({ certificates }) => {
         </div>
     )
 }
+
 export const EducationResolve = ({ education, img }) => {
     return (
         <div className="education-container">

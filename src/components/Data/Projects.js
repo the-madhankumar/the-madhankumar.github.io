@@ -3,6 +3,8 @@ const projects = {
   projects: [
     {
       title: "MicroMorph AI",
+      link: "https://micromorph.vercel.app/",
+      github: "https://github.com/the-madhankumar/MicroMorphFrontend",
       subtitle: "Intelligent Embedded Microscopy Platform",
       techStack: ["Python", "PyTorch", "ReactJS", "Firebase", "ChromaDB"],
       description: [
@@ -15,6 +17,7 @@ const projects = {
     },
     {
       title: "MedSureVault",
+      github: "https://github.com/the-madhankumar/MedSureVault",
       subtitle: "Blockchain-based Prescription Tracking System",
       techStack: ["Solidity", "Ganache", "Web3.py", "FastAPI", "MySQL", "React.js"],
       description: [
@@ -26,6 +29,7 @@ const projects = {
     },
     {
       title: "MediAI",
+      github: "https://github.com/the-madhankumar/MediAI",
       subtitle: "AI Medical Agent & Healthcare Analytics Platform",
       techStack: ["Python", "FastAPI", "RAG", "SQL Agents", "Firebase", "Flutter"],
       description: [
@@ -37,6 +41,7 @@ const projects = {
     },
     {
       title: "CCSL",
+      github: "https://github.com/the-madhankumar/CCSL",
       subtitle: "Cricket Card Strategy League",
       techStack: ["Python", "Q-learning", "Flutter", "Dart"],
       description: [

@@ -21,12 +21,18 @@ const Home = () => {
                         <a href='mailto:madhankumarbusiness@gmail.com'>madhankumarbusiness@gmail.com</a>
                     </span>
                     <span>
-                        <a href='https://github.com/the-madhankumar'>
+                        <a href='https://github.com/the-madhankumar'
+                            target="_blank"
+                            rel="noreferrer"
+                        >
                             <Github />
                         </a>
                     </span>
                     <span>
-                        <a href='https://linkedin.com/in/themadhankumarm'>
+                        <a href='https://linkedin.com/in/themadhankumarm'
+                            target="_blank"
+                            rel="noreferrer"
+                        >
                             <Linkedin />
                         </a>
                     </span>
