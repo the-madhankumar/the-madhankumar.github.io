@@ -144,8 +144,6 @@ const Home = () => {
                 </div>
             </div>
 
-            <Divider />
-
             <footer className="footer">
                 <div className="footer-content">
 
@@ -156,8 +154,6 @@ const Home = () => {
                             <Mail size={16} /> madhankumarbusiness@gmail.com
                         </a>
 
-                        <span className="footer-separator">|</span>
-
                         <a
                             href="https://github.com/the-madhankumar"
                             target="_blank"
@@ -166,8 +162,6 @@ const Home = () => {
                             <Github size={16} /> GitHub
                         </a>
 
-                        <span className="footer-separator">|</span>
-
                         <a
                             href="https://linkedin.com/in/themadhankumarm"
                             target="_blank"
@@ -175,8 +169,6 @@ const Home = () => {
                         >
                             <Linkedin size={16} /> LinkedIn
                         </a>
-
-                        <span className="footer-separator">|</span>
 
                         <span className="footer-copy">
                             © {new Date().getFullYear()} Madhan Kumar M
