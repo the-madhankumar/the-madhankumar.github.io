@@ -119,3 +119,72 @@ export const EducationResolve = ({ education, img }) => {
         </div>
     );
 };
+
+export const ContributionResolve = ({ contributions }) => {
+    return (
+        <div>
+            {contributions?.map((project, index) => (
+                <div key={index} className="project-card">
+
+                    <div className='project-external my-links'>
+                        <h2>{project.title}</h2>
+
+                        {project.link && (
+                            <a
+                                href={project.link}
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                <ExternalLink />
+                            </a>
+                        )}
+
+                        {project.github && (
+                            <a
+                                href={project.github}
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                <Github />
+                            </a>
+                        )}
+                    </div>
+
+                    <p>{project.subtitle}</p>
+
+                    <div>
+                        {project.techStack?.map((tech, i) => (
+                            <span key={i}>{tech} </span>
+                        ))}
+                    </div>
+
+                    <ul>
+                        {project.description?.map((point, i) => (
+                            <li key={i}>{point}</li>
+                        ))}
+                    </ul>
+
+                    {project.pullRequests && (
+                        <div className="pull-requests">
+                            <strong>Pull Requests:</strong>
+                            <ul>
+                                {project.pullRequests.map((pr, i) => (
+                                    <li key={i}>
+                                        <a
+                                            href={pr}
+                                            target="_blank"
+                                            rel="noreferrer"
+                                        >
+                                            PR #{pr.split("/").pop()}
+                                        </a>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    )}
+
+                </div>
+            ))}
+        </div>
+    );
+};

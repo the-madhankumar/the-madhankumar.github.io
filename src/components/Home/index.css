@@ -1,10 +1,17 @@
-/* Reset */
-* {
+/* ================================
+   RESET
+================================ */
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* ================================
+   THEME VARIABLES
+================================ */
 .Main-container.light {
     --bg: #ffffff;
     --text: #111;
@@ -25,70 +32,120 @@
     --card-bg: #1e1e1e;
 }
 
+/* ================================
+   MAIN CONTAINER
+================================ */
 .Main-container {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: var(--bg);
+    background: var(--bg);
     font-family: "Inter", system-ui, sans-serif;
     color: var(--text);
-    transition: all 0.3s ease;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
-.des{
+/* ================================
+   HEADER / INTRO
+================================ */
+.first-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    padding-top: 40px;
+}
+
+.first-section svg {
+    width: 70px;
+    height: 70px;
+    color: var(--text);
+}
+
+.start {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.my-name {
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.my-location {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.my-location svg {
+    width: 14px;
+    height: 14px;
+}
+
+/* ================================
+   DESCRIPTION
+================================ */
+.des {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.description{
-    line-height: 1.6;
+.description {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    text-align: justify;
 }
 
-.download-button{
+/* ================================
+   DOWNLOAD BUTTON
+================================ */
+.download-button {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-
     padding: 10px 18px;
-    border: 2px solid #444;
+    border: 2px solid var(--border);
     border-radius: 8px;
-
     font-size: 15px;
     font-weight: 500;
     text-decoration: none;
     color: var(--text);
-
-    cursor: pointer;
     width: fit-content;
-
-    transition: all 0.3s ease;
+    transition: all 0.25s ease;
 }
 
-.download{
+.download {
     width: 18px;
     height: 18px;
-    transition: transform 0.3s ease;
+    transition: transform 0.25s ease;
 }
 
-.download-button:hover{
-    background: #444;
-    color: #fff;
+.download-button:hover {
+    background: var(--text);
+    color: var(--bg);
     transform: translateY(-2px);
 }
 
-.download-button:hover .download{
+.download-button:hover .download {
     transform: translateY(2px);
 }
 
-.download-button:active{
-    transform: translateY(0);
-}
-
-/* Links and icons */
-.my-links span svg {
-    cursor: pointer;
+/* ================================
+   LINKS
+================================ */
+.my-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-top: 10px;
 }
 
 .my-links a {
@@ -102,73 +159,45 @@
     color: var(--text);
 }
 
-/* First section */
-.first-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-    padding-top: 40px;
-}
-
-.first-section svg {
-    width: 70px;
-    height: 70px;
-    color: var(--text);
-}
-
-.my-name {
-    font-size: 32px;
-    font-weight: 600;
-    letter-spacing: 2px;
-}
-
-.my-links {
-    display: flex;
-    gap: 25px;
-    align-items: center;
-    margin-top: 10px;
-}
-
 .my-links svg {
     width: 22px;
     height: 22px;
+    cursor: pointer;
 }
 
-/* Divider */
+/* ================================
+   DIVIDER
+================================ */
 .divider {
     width: 100%;
     max-width: 700px;
     height: 1px;
-    background-color: var(--divider);
-    margin: 40px 40px;
+    background: var(--divider);
+    margin: 40px 0;
 }
 
-/* Section layout */
+/* ================================
+   SECTION LAYOUT
+================================ */
 .section {
     max-width: 800px;
     width: 100%;
     display: grid;
-    grid-template-columns: 160px 1fr;
+    grid-template-columns: 200px 1fr;
     gap: 40px;
     align-items: start;
 }
 
 .title {
     font-size: 30px;
-    font-weight: 100;
+    font-weight: 300;
     letter-spacing: 2px;
     color: var(--text-secondary);
 }
 
-.description {
-    font-size: 16px;
-    line-height: 1.7;
-    color: var(--text-secondary);
-    text-align: justify;
-}
-
-/* Skills */
+/* ================================
+   SKILLS
+================================ */
 .skills-container {
     display: flex;
     flex-direction: column;
@@ -188,28 +217,25 @@
 
 .skill-item {
     padding: 4px 10px;
-    border: 1px solid var(--border);
-    border-radius: 5px;
+    border-radius: 6px;
     font-size: 14px;
-    color: var(--text);
-    background-color: var(--card-bg);
+    border: 1px solid var(--border);
+    background: var(--card-bg);
 }
 
-/* Projects */
+/* ================================
+   PROJECTS
+================================ */
 .project-card {
     display: flex;
     flex-direction: column;
     gap: 10px;
     padding-bottom: 20px;
-    background-color: var(--card-bg);
-    border-radius: 6px;
-    padding: 15px;
 }
 
 .project-card h2 {
     font-size: 18px;
     font-weight: 600;
-    color: var(--text);
 }
 
 .project-card p {
@@ -218,10 +244,10 @@
 }
 
 .project-card span {
-    padding: 3px 8px;
-    border: 1px solid var(--border);
-    border-radius: 4px;
     font-size: 12px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    border: 1px solid var(--border);
     color: var(--text-secondary);
 }
 
@@ -233,17 +259,54 @@
 .project-card li {
     font-size: 14px;
     line-height: 1.6;
-    color: var(--text);
 }
 
-/* Work */
+/* ================================
+   PULL REQUESTS
+================================ */
+.pull-requests {
+    margin-top: 10px;
+}
+
+.pull-requests strong {
+    font-size: 14px;
+}
+
+.pull-requests ul {
+    margin-top: 6px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style: none;
+}
+
+.pull-requests a {
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 5px;
+    border: 1px solid var(--border);
+    background: var(--card-bg);
+    color: var(--link);
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.pull-requests a:hover {
+    background: var(--link);
+    color: #fff;
+}
+
+/* ================================
+   WORK
+================================ */
 .work-sub-section {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
 }
 
-/* Certificates */
+/* ================================
+   CERTIFICATES
+================================ */
 .certificates-container {
     display: flex;
     flex-direction: column;
@@ -252,14 +315,15 @@
 
 .certificate-item {
     font-size: 15px;
-    color: var(--text);
 }
 
 .certificate-org {
     color: var(--text-secondary);
 }
 
-/* Education */
+/* ================================
+   EDUCATION
+================================ */
 .education-container {
     display: flex;
     align-items: center;
@@ -275,7 +339,6 @@
 .education-item {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     width: 100%;
 }
 
@@ -285,9 +348,7 @@
 }
 
 .edu-left span:first-child {
-    font-size: 16px;
     font-weight: 600;
-    color: var(--text);
 }
 
 .edu-left span:last-child {
@@ -300,7 +361,9 @@
     color: var(--text-secondary);
 }
 
-/* Footer */
+/* ================================
+   FOOTER
+================================ */
 .footer {
     width: 100%;
     padding: 30px 0;
@@ -318,96 +381,49 @@
 
 .footer-links {
     display: flex;
-    align-items: center;
     gap: 12px;
 }
 
 .footer-links a {
-    text-decoration: none;
-    color: var(--text-secondary);
     display: flex;
     align-items: center;
     gap: 6px;
-    transition: color 0.2s ease;
+    text-decoration: none;
+    color: var(--text-secondary);
 }
 
 .footer-links a:hover {
     color: var(--text);
 }
 
-.footer-separator {
-    color: #bbb;
-}
-
-.footer-icon {
-    width: 100px;
-    height: 30px;
-    color: var(--text-secondary);
-}
-
-.footer-copy {
-    margin-left: 6px;
-}
-
-.flip-icon {
-    transform: scaleX(-1);
-}
-
-/* Responsive */
+/* ================================
+   RESPONSIVE
+================================ */
 @media (max-width: 1024px) {
+
     .section {
-        grid-template-columns: 140px 1fr;
+        grid-template-columns: 150px 1fr;
         gap: 30px;
         padding: 0 20px;
-    }
-
-    .divider {
-        max-width: 90%;
-    }
-
-    .first-section {
-        gap: 16px;
-        padding-top: 35px;
-    }
-
-    .first-section svg {
-        width: 60px;
-        height: 60px;
     }
 
     .my-name {
         font-size: 28px;
     }
 
-    .my-links {
-        gap: 20px;
-    }
 }
 
 @media (max-width: 768px) {
+
     .first-section {
         flex-direction: column;
         text-align: center;
-        gap: 15px;
-    }
-
-    .my-name {
-        font-size: 26px;
-        letter-spacing: 1px;
-    }
-
-    .first-section svg {
-        width: 55px;
-        height: 55px;
-    }
-
-    .my-links {
-        justify-content: center;
+        gap: 20px;
     }
 
     .section {
         grid-template-columns: 1fr;
-        gap: 15px;
+        gap: 20px;
         padding: 0 25px;
     }
 
@@ -415,25 +431,9 @@
         font-size: 24px;
     }
 
-    .description {
-        font-size: 15px;
-    }
-
-    .divider {
-        margin: 30px 0;
-        max-width: 90%;
-    }
-
-    .education-container {
-        flex-direction: column;
-        align-items: flex-start;
-    }
 }
 
 @media (max-width: 480px) {
-    .Main-container {
-        padding: 0 15px;
-    }
 
     .my-name {
         font-size: 22px;
@@ -447,64 +447,9 @@
         font-size: 14px;
     }
 
-    .skill-item {
-        font-size: 12px;
-    }
-
-    .project-card h2 {
-        font-size: 16px;
-    }
-
-    .project-card p {
-        font-size: 13px;
-    }
-
-    .project-card li {
-        font-size: 13px;
-    }
-
     .work-sub-section {
         flex-direction: column;
         gap: 5px;
     }
 
-    .footer-content {
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
-    }
-
-    .footer-links {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 8px;
-    }
-
-    .footer-icon {
-        width: 20px;
-        height: 20px;
-    }
-
-    .first-section {
-        gap: 12px;
-        padding-top: 30px;
-    }
-
-    .first-section svg {
-        width: 48px;
-        height: 48px;
-    }
-
-    .my-links {
-        gap: 18px;
-    }
-
-    .my-links a {
-        font-size: 14px;
-    }
-
-    .my-links svg {
-        width: 20px;
-        height: 20px;
-    }
 }

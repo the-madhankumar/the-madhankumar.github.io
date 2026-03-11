@@ -1,6 +1,6 @@
-import { SquareUser, Linkedin, Github, Mail, SendHorizontal, Moon, Sun, FileText } from 'lucide-react';
+import { SquareUser, Linkedin, Github, Mail, SendHorizontal, Moon, Sun, FileText, MapPin } from 'lucide-react';
 import React, { useState } from 'react';
-import { Divider, SkillsResolve, ProjectsResolve, WorkResolve, CertificatesResolve, EducationResolve } from '../utils/utils'
+import { Divider, SkillsResolve, ProjectsResolve, WorkResolve, CertificatesResolve, EducationResolve, ContributionResolve } from '../utils/utils'
 
 import about from '../Data/About';
 import skills from '../Data/Skills';
@@ -8,6 +8,7 @@ import projects from '../Data/Projects';
 import internships from '../Data/Work';
 import certificates from '../Data/Certificates';
 import education from '../Data/Education';
+import contribution from '../Data/Contribution';
 
 import './index.css'
 
@@ -19,28 +20,41 @@ const Home = () => {
     return (
         <div className={`Main-container ${darkMode ? 'dark' : 'light'}`}>
             <div className='first-section'>
-                <SquareUser />
-                <span className='my-name'>MADHAN KUMAR M</span>
+                <SquareUser size={16}/>
+                <div className='start'>
+                    <span className='my-name'>MADHAN KUMAR M</span>
+                    <span className='my-location'>
+                        <MapPin /> Chennai, India
+                    </span>
+                </div>
+                
                 <div className='my-links'>
                     <span>
-                        <a href='mailto:madhankumarbusiness@gmail.com'>madhankumarbusiness@gmail.com</a>
+                        <a href='mailto:madhankumarbusiness@gmail.com'>
+                            madhankumarbusiness@gmail.com
+                        </a>
                     </span>
+
                     <span>
-                        <a href='https://github.com/the-madhankumar'
+                        <a
+                            href='https://github.com/the-madhankumar'
                             target="_blank"
                             rel="noreferrer"
                         >
                             <Github />
                         </a>
                     </span>
+
                     <span>
-                        <a href='https://linkedin.com/in/themadhankumarm'
+                        <a
+                            href='https://linkedin.com/in/themadhankumarm'
                             target="_blank"
                             rel="noreferrer"
                         >
                             <Linkedin />
                         </a>
                     </span>
+
                     <span onClick={toggle}>
                         {darkMode ? <Moon /> : <Sun />}
                     </span>
@@ -118,6 +132,16 @@ const Home = () => {
                     education={education.items}
                     img={education.image}
                 />
+            </div>
+
+            <Divider />
+
+            <div className='section'>
+                <div className='title'>{contribution.title}</div>
+
+                <div className='skills-container'>
+                    <ContributionResolve contributions={contribution.projects} />
+                </div>
             </div>
 
             <Divider />
