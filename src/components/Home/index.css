@@ -299,11 +299,17 @@ body {
 }
 
 .certificate-item {
+    padding: 20px;
     font-size: 15px;
+    border-radius: 18px;
+    background: var(--card);
+    border: 1px solid var(--border);
 }
 
 .certificate-org {
     color: var(--text-secondary);
+    font-size: 15px;
+    font-weight: bold;
 }
 
 .education-container {
