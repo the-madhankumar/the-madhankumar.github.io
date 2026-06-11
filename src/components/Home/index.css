@@ -45,12 +45,18 @@ body {
 
 .first-section {
     width: 100%;
-    max-width: 900px;
+    max-width: 1000px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 20px;
     padding: 40px 20px 20px;
+}
+
+.profile {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
 }
 
 .first-section svg {

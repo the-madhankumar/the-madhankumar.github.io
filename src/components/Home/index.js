@@ -20,14 +20,16 @@ const Home = () => {
     return (
         <div className={`Main-container ${darkMode ? 'dark' : 'light'}`}>
             <div className='first-section'>
-                <SquareUser size={16}/>
-                <div className='start'>
-                    <span className='my-name'>MADHAN KUMAR M</span>
-                    <span className='my-location'>
-                        <MapPin /> Chennai, India
-                    </span>
+                <div className='profile'>
+                    <SquareUser size={16} />
+                    <div className='start'>
+                        <span className='my-name'>MADHAN KUMAR M</span>
+                        <span className='my-location'>
+                            <MapPin /> Chennai, India
+                        </span>
+                    </div>
                 </div>
-                
+
                 <div className='my-links'>
                     <span>
                         <a href='mailto:madhankumarbusiness@gmail.com'>
