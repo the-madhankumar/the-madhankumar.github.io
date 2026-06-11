@@ -26,6 +26,13 @@ const internships = {
         "Designed promotional posters using Canva to improve brand visibility.",
         "Developed skills across web development, mobile apps, and design."
       ]
+    },
+    {
+      company: "Prodapt Solutions Private Limited",
+      role: "FDE",
+      duration: "July 2026 – Present",
+      location: "Perungudi, Tamil Nadu, India",
+      description: []
     }
   ]
 };
