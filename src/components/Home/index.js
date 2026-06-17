@@ -30,16 +30,22 @@ const Home = () => {
                     </div>
                 </div>
 
-                <div className='my-links'>
-                    <span>
-                        <a href='mailto:madhankumarbusiness@gmail.com'>
+                <div className="my-links">
+                    <span className="email-link">
+                        <a href="mailto:madhankumarbusiness@gmail.com">
                             madhankumarbusiness@gmail.com
+                        </a>
+                    </span>
+
+                    <span className="email-icon">
+                        <a href="mailto:madhankumarbusiness@gmail.com">
+                            <Mail size={18} />
                         </a>
                     </span>
 
                     <span>
                         <a
-                            href='https://github.com/the-madhankumar'
+                            href="https://github.com/the-madhankumar"
                             target="_blank"
                             rel="noreferrer"
                         >
@@ -49,7 +55,7 @@ const Home = () => {
 
                     <span>
                         <a
-                            href='https://linkedin.com/in/themadhankumarm'
+                            href="https://linkedin.com/in/themadhankumarm"
                             target="_blank"
                             rel="noreferrer"
                         >
