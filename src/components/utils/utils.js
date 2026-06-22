@@ -1,4 +1,5 @@
 import { ExternalLink, Github } from 'lucide-react';
+import { useState } from 'react';
 
 export const Divider = () => {
     return <div className="divider"></div>
@@ -30,14 +31,14 @@ export const ProjectsResolve = ({ projects }) => {
                     <div className='project-external my-links'>
                         <h2>{project.title}</h2>
 
-                        { project.link && 
+                        {project.link &&
                             <a href={project.link}
                                 target="_blank"
                                 rel="noreferrer"
                             ><ExternalLink />
                             </a>
                         }
-                        { project.github &&
+                        {project.github &&
                             <a href={project.github}
                                 target="_blank"
                                 rel="noreferrer"
@@ -120,71 +121,109 @@ export const EducationResolve = ({ education, img }) => {
     );
 };
 
-export const ContributionResolve = ({ contributions }) => {
+export const ContributionResolve = ({ contributions = [] }) => {
+    const [selectedPRs, setSelectedPRs] = useState({});
+
+    const handlePRSelect = (projectIndex, prIndex) => {
+        setSelectedPRs((prev) => ({
+            ...prev,
+            [projectIndex]: prIndex,
+        }));
+    };
+
     return (
         <div>
-            {contributions?.map((project, index) => (
-                <div key={index} className="project-card">
+            {contributions.map((project, projectIndex) => {
+                const prs = project.pullRequests ?? [];
+                const selectedPRIndex = selectedPRs[projectIndex] ?? 0;
+                const selectedPR = prs[selectedPRIndex];
 
-                    <div className='project-external my-links'>
-                        <h2>{project.title}</h2>
+                return (
+                    <div key={projectIndex} className="project-card">
+                        <div className="project-external my-links">
+                            <h2>{project.title}</h2>
 
-                        {project.link && (
-                            <a
-                                href={project.link}
-                                target="_blank"
-                                rel="noreferrer"
-                            >
-                                <ExternalLink />
-                            </a>
+                            {project.link && (
+                                <a
+                                    href={project.link}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
+                                    <ExternalLink />
+                                </a>
+                            )}
+
+                            {project.github && (
+                                <a
+                                    href={project.github}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
+                                    <Github />
+                                </a>
+                            )}
+                        </div>
+
+                        <p>{project.subtitle}</p>
+
+                        <div className="tech-stack">
+                            {project.techStack?.map((tech, index) => (
+                                <span key={index}>{tech}</span>
+                            ))}
+                        </div>
+
+                        {prs.length > 0 && (
+                            <div className="pull-requests">
+                                <strong>Pull Requests:</strong>
+
+                                <ul>
+                                    {prs.map((pr, prIndex) => (
+                                        <li key={prIndex}>
+                                            <button
+                                                type="button"
+                                                className={
+                                                    selectedPRIndex === prIndex
+                                                        ? "active-pr"
+                                                        : ""
+                                                }
+                                                onClick={() =>
+                                                    handlePRSelect(
+                                                        projectIndex,
+                                                        prIndex
+                                                    )
+                                                }
+                                            >
+                                                PR #{pr.url?.split("/").pop()}
+                                            </button>
+
+                                            <a
+                                                href={pr.url}
+                                                target="_blank"
+                                                rel="noreferrer"
+                                                aria-label={`Open PR ${prIndex + 1}`}
+                                            >
+                                                <ExternalLink size={16} />
+                                            </a>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
                         )}
 
-                        {project.github && (
-                            <a
-                                href={project.github}
-                                target="_blank"
-                                rel="noreferrer"
+                        {selectedPR?.description?.length > 0 && (
+                            <ul
+                                key={`${projectIndex}-${selectedPRIndex}`}
+                                className="pr-description flash-highlight"
                             >
-                                <Github />
-                            </a>
-                        )}
-                    </div>
-
-                    <p>{project.subtitle}</p>
-
-                    <div>
-                        {project.techStack?.map((tech, i) => (
-                            <span key={i}>{tech} </span>
-                        ))}
-                    </div>
-
-                    <ul>
-                        {project.description?.map((point, i) => (
-                            <li key={i}>{point}</li>
-                        ))}
-                    </ul>
-
-                    {project.pullRequests && (
-                        <div className="pull-requests">
-                            <strong>Pull Requests:</strong>
-                            <ul>
-                                {project.pullRequests.map((pr, i) => (
-                                    <li key={i}>
-                                        <a
-                                            href={pr}
-                                            target="_blank"
-                                            rel="noreferrer"
-                                        >
-                                            PR #{pr.split("/").pop()}
-                                        </a>
-                                    </li>
+                                {selectedPR.description.map((point, index) => (
+                                    <li key={index}>{point}</li>
                                 ))}
                             </ul>
-                        </div>
-                    )}
-
-                </div>
-            ))}
+                        )}
+                    </div>
+                );
+            })}
         </div>
     );
+
 };

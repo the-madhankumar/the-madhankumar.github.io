@@ -1,0 +1,136 @@
+.title {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-secondary);
+    position: sticky;
+    top: 48px;
+    height: fit-content;
+    opacity: 0.8;
+}
+
+.des {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.description {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    text-align: justify;
+}
+
+.download-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+    padding: 12px 24px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text);
+    background: var(--card);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.download-button:hover {
+    background: var(--text);
+    color: var(--bg);
+    border-color: var(--text);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.download {
+    width: 18px;
+    height: 18px;
+}
+
+
+@media (max-width: 900px) {
+    .section {
+        grid-template-columns: 160px 1fr;
+        gap: 40px;
+    }
+
+    .my-name {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 768px) {
+    .email-link {
+        display: none;
+    }
+
+    .email-icon {
+        display: flex;
+        align-items: center;
+    }
+
+    .first-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: calc(100% - 40px);
+        margin: 32px auto 0;
+        padding: 40px 24px;
+        gap: 32px;
+        border-radius: 24px;
+    }
+
+    .profile {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .section {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 0 24px 80px;
+    }
+
+    .title {
+        font-size: 13px;
+        position: static;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 12px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .email-link {
+        display: none;
+    }
+
+    .email-icon {
+        display: flex;
+        align-items: center;
+    }
+    
+    .first-section {
+        padding: 32px 16px;
+    }
+
+    .my-name {
+        font-size: 24px;
+    }
+
+    .title {
+        font-size: 13px;
+        position: static;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 12px;
+        width: 100%;
+    }
+}

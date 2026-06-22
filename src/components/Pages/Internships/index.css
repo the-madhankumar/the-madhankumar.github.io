@@ -1,0 +1,32 @@
+@media (max-width: 900px) {
+    .section {
+        grid-template-columns: 160px 1fr;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .section {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 0 24px 80px;
+    }
+
+    .title {
+        font-size: 13px;
+        position: static;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 12px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 13px;
+        position: static;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 12px;
+        width: 100%;
+    }
+}

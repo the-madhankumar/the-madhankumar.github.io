@@ -1,16 +1,16 @@
-import { SquareUser, Linkedin, Github, Mail, SendHorizontal, Moon, Sun, FileText, MapPin } from 'lucide-react';
 import React, { useState } from 'react';
-import { Divider, SkillsResolve, ProjectsResolve, WorkResolve, CertificatesResolve, EducationResolve, ContributionResolve } from '../utils/utils'
-
-import about from '../Data/About';
-import skills from '../Data/Skills';
-import projects from '../Data/Projects';
-import internships from '../Data/Work';
-import certificates from '../Data/Certificates';
-import education from '../Data/Education';
-import contribution from '../Data/Contribution';
+import { Divider } from '../utils/utils'
 
 import './index.css'
+import Profile from '../Pages/Profile'
+import About from '../Pages/About';
+import Skills from '../Pages/Skills'
+import Project from '../Pages/Project';
+import Internships from '../Pages/Internships';
+import Certifications from '../Pages/Certifications';
+import Contributions from '../Pages/Contributions';
+import Education from '../Pages/Education';
+import Footer from '../Pages/Footer';
 
 const Home = () => {
     const [darkMode, setdarkMode] = useState(false);
@@ -19,175 +19,32 @@ const Home = () => {
 
     return (
         <div className={`Main-container ${darkMode ? 'dark' : 'light'}`}>
-            <div className='first-section'>
-                <div className='profile'>
-                    <SquareUser size={16} />
-                    <div className='start'>
-                        <span className='my-name'>MADHAN KUMAR M</span>
-                        <span className='my-location'>
-                            <MapPin /> Chennai, India
-                        </span>
-                    </div>
-                </div>
-
-                <div className="my-links">
-                    <span className="email-link">
-                        <a href="mailto:madhankumarbusiness@gmail.com">
-                            madhankumarbusiness@gmail.com
-                        </a>
-                    </span>
-
-                    <span className="email-icon">
-                        <a href="mailto:madhankumarbusiness@gmail.com">
-                            <Mail size={18} />
-                        </a>
-                    </span>
-
-                    <span>
-                        <a
-                            href="https://github.com/the-madhankumar"
-                            target="_blank"
-                            rel="noreferrer"
-                        >
-                            <Github />
-                        </a>
-                    </span>
-
-                    <span>
-                        <a
-                            href="https://linkedin.com/in/themadhankumarm"
-                            target="_blank"
-                            rel="noreferrer"
-                        >
-                            <Linkedin />
-                        </a>
-                    </span>
-
-                    <span onClick={toggle}>
-                        {darkMode ? <Moon /> : <Sun />}
-                    </span>
-                </div>
-            </div>
-
+            <Profile
+                toggle={toggle}
+                darkMode={darkMode}
+            />
             <Divider />
 
-            <div className='section'>
-                <div className='title'>{about.title}</div>
-                <div className='des'>
-                    <div className='description'>{about.description}</div>
-
-                    <a
-                        href={about.resume}
-                        download="Madhan-Kumar-M.pdf"
-                        className='download-button'
-                    >
-                        <FileText className='download' />
-                        Download CV
-                    </a>
-                </div>
-            </div>
-
+            <About />
             <Divider />
 
-            <div className='section'>
-                <div className='title'>{skills.title}</div>
-
-                <div className='skills-container'>
-                    {skills.categories?.map((category, index) => (
-                        <SkillsResolve
-                            key={index}
-                            name={category.name}
-                            skills={category.skills}
-                        />
-                    ))}
-                </div>
-            </div>
-
+            <Skills />
             <Divider />
 
-            <div className='section'>
-                <div className='title'>{projects.title}</div>
-
-                <div className='skills-container'>
-                    <ProjectsResolve projects={projects.projects} />
-                </div>
-            </div>
-
+            <Project />
             <Divider />
 
-            <div className='section'>
-                <div className='title'>{internships.title}</div>
-
-                <div className='skills-container'>
-                    <WorkResolve work={internships.experiences} />
-                </div>
-            </div>
-
+            <Internships />
             <Divider />
 
-            <div className='section'>
-                <div className='title'>{certificates.title}</div>
-
-                <CertificatesResolve certificates={certificates.items} />
-            </div>
-
+            <Certifications />
             <Divider />
 
-            <div className='section'>
-                <div className='title'>{education.title}</div>
-
-                <EducationResolve
-                    education={education.items}
-                    img={education.image}
-                />
-            </div>
-
+            <Education />
             <Divider />
 
-            <div className='section'>
-                <div className='title'>{contribution.title}</div>
-
-                <div className='skills-container'>
-                    <ContributionResolve contributions={contribution.projects} />
-                </div>
-            </div>
-
-            <footer className="footer">
-                <div className="footer-content">
-
-                    <SendHorizontal className="footer-icon" />
-
-                    <div className="footer-links">
-                        <a href="mailto:madhankumarbusiness@gmail.com">
-                            <Mail size={16} /> madhankumarbusiness@gmail.com
-                        </a>
-
-                        <a
-                            href="https://github.com/the-madhankumar"
-                            target="_blank"
-                            rel="noreferrer"
-                        >
-                            <Github size={16} /> GitHub
-                        </a>
-
-                        <a
-                            href="https://linkedin.com/in/themadhankumarm"
-                            target="_blank"
-                            rel="noreferrer"
-                        >
-                            <Linkedin size={16} /> LinkedIn
-                        </a>
-
-                        <span className="footer-copy">
-                            © {new Date().getFullYear()} Madhan Kumar M
-                        </span>
-
-                    </div>
-
-                    <SendHorizontal className="footer-icon flip-icon" />
-
-                </div>
-            </footer>
+            <Contributions />
+            <Footer />
         </div>
     )
 }
