@@ -43,13 +43,22 @@ const contribution = {
                         "Added prefix, suffix, and split operations.",
                         "Optimized split functionality using zero-copy string views."
                     ]
-                }
+                },
+                {
+                    url: "https://github.com/rux-lang/Std/pull/62",
+                    description: [
+                        "Added integer, floating-point, and boolean parsing utilities.",
+                        "Implemented lightweight, dependency-free parsing with built-in validation.",
+                        "Added support for scientific notation, signed values, and flexible boolean literals.",
+                        "Introduced a consistent `(value, bool)` API for explicit parse success/failure handling."
+                    ]
+                },
             ]
         },
 
         {
             title: "FreshScan AI",
-            link: "https://freshscanai.vercel.app/",
+            link: "https://fresh-scanai.vercel.app/",
             github: "https://github.com/jpdevhub/FreshScanAi",
             subtitle: "Open Source Frontend & PWA Contribution",
             techStack: ["React", "TypeScript", "Vite", "PWA", "Tailwind CSS"],

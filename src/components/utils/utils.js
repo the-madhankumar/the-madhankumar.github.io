@@ -125,10 +125,9 @@ export const ContributionResolve = ({ contributions = [] }) => {
     const [selectedPRs, setSelectedPRs] = useState({});
 
     const handlePRSelect = (projectIndex, prIndex) => {
-        setSelectedPRs((prev) => ({
-            ...prev,
-            [projectIndex]: prIndex,
-        }));
+        const updatedPRs = { ...selectedPRs };
+        updatedPRs[projectIndex] = prIndex;
+        setSelectedPRs(updatedPRs);
     };
 
     return (
