@@ -36,7 +36,7 @@ const contribution = {
             techStack: ["Cpp", "Rux"],
             pullRequests: [
                 {
-                    url: "https://github.com/rux-lang/Std/pull/18",
+                    url: "https://github.com/rux-lang/Packages/pull/18",
                     description: [
                         "Added core string utility APIs.",
                         "Implemented case conversion and formatting helpers.",
@@ -45,7 +45,7 @@ const contribution = {
                     ]
                 },
                 {
-                    url: "https://github.com/rux-lang/Std/pull/62",
+                    url: "https://github.com/rux-lang/Packages/pull/62",
                     description: [
                         "Added integer, floating-point, and boolean parsing utilities.",
                         "Implemented lightweight, dependency-free parsing with built-in validation.",
