@@ -29,7 +29,7 @@ const internships = {
     },
     {
       company: "Prodapt Solutions Private Limited",
-      role: "FDE",
+      role: "Trainee",
       duration: "July 2026 – Present",
       location: "Perungudi, Tamil Nadu, India",
       description: []
